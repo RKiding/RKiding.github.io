@@ -37,7 +37,7 @@ S = solve(eqn) % assign the result to S
 fplot([lhs(eqn) rhs(eqn)], [-4 2])
 ```
 
-<img src="file:///D:/Download/大三下/fig1.png" title="" alt="fig1.png" width="303">
+<img title="" src="https://s2.loli.net/2023/06/21/ZW69sAhDagNlnw4.png" alt="fig1.png" width="303">
 
 5. Find out the numerical solutions in the certain range we have observered (we assume that k>0):
 
