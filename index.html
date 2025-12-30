@@ -1,104 +1,231 @@
----
-layout: default
-home-title: RKiding's Blog
-description: Personal blog for talking and academic.
----
+<!DOCTYPE html>
+<html lang="en">
 
-{% include header.html %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REPORT::RUNKE_RUAN | AI RESEARCHER</title>
+    <meta name="description" content="Technical report of Runke Ruan. Specialized in Agentic AI and Data Intelligence.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="index.css">
+</head>
 
-<div
-    class="g-banner home-banner {{ site.theme-color | prepend: 'banner-theme-' }}"
-    data-theme="{{ site.theme-color }}"
-    style="{% if page.header-img %}background: url({{ page.header-img | relative_url }}) no-repeat center center; background-size: cover;{% endif %}"
->
-    <h2>{{ page.home-title }}</h2>
-    <h3>{{ page.description }}</h3>
-</div>
+<body>
+    <div class="corner-accent top-left"></div>
+    <div class="corner-accent bottom-right"></div>
 
-<main class="g-container home-content">
-    <div class="article-list">
-        {% for post in paginator.posts %}
-            <article class="article-item">
-                {% if post.cover %}
-                <div class="post-cover">
-                    <a class="post-link" href="{{ post.url | relative_url }}" title="{{ post.title }}"></a>
-                    <img src="{{ post.cover | relative_url }}" href="{{ post.url | relative_url }}" alt="">
+    <nav>
+        <a href="#summary" title="Summary"></a>
+        <a href="#experience" title="Experience"></a>
+        <a href="#projects" title="Projects"></a>
+        <a href="#education" title="Education"></a>
+        <a href="#skills" title="Skills"></a>
+    </nav>
+
+    <div class="report-container">
+        <header>
+            <div style="float: right; opacity: 0.1;">
+                <svg width="100" height="100" viewBox="0 0 100 100">
+                    <path d="M10 10 L90 10 L90 90 L10 90 Z" fill="none" stroke="currentColor" stroke-width="0.5" />
+                    <path d="M20 20 L80 20 L80 80 L20 80 Z" fill="none" stroke="currentColor" stroke-width="0.5" />
+                    <circle cx="50" cy="50" r="10" fill="currentColor" />
+                </svg>
+            </div>
+            <div class="agent-meta">AGENT_ID: RK_007 | STATUS: ACTIVE</div>
+            <h1>Runke Ruan</h1>
+            <div class="header-meta">
+                <span>[GITHUB] <a href="https://github.com/RKiding"
+                        style="color: inherit; text-decoration: none;">github.com/RKiding</a></span>
+                <span>[EMAIL] rrk1001qq.com</span>
+                <span>[LOC] Guangzhou / Shenzhen / HK</span>
+            </div>
+        </header>
+
+        <section id="summary">
+            <div class="agent-meta">OVERVIEW_BIT_STREAM</div>
+            <div class="section-head">
+                <h2>01. Executive Summary</h2>
+            </div>
+            <p style="font-size: 1.05rem; line-height: 1.8;">
+                AI Researcher specializing in <strong>Agentic AI</strong> and <strong>Autonomous Data Systems</strong>.
+                Focusing on the architecture of Multi-Agent workflows, Agentic RAG optimization, and the bridge between
+                Large Language Models and quantitative execution.
+            </p>
+        </section>
+
+        <section id="experience">
+            <div class="agent-meta">PRACTICE_VALIDATION_LOG</div>
+            <div class="section-head">
+                <h2>02. Professional Experience</h2>
+            </div>
+
+            <div class="report-entry">
+                <div class="entry-title">AI Research Intern</div>
+                <div class="entry-subtitle">Tencent (WeChat)</div>
+                <div class="entry-content">
+                    <ul>
+                        <li>Designed and implemented multi-stage Agentic workflows for intelligent translation systems,
+                            optimizing for high-precision linguistic tasks.</li>
+                        <li>Configured MCP Servers for deep document integration (Word/PDF/Markdown editing within
+                            agent workflows).</li>
+                        <li>Optimized RAG pipelines using Graph-based knowledge retrieval and hybrid constraints.</li>
+                        <li>Fine-tuned models for specialized tasks, reducing latency and cost while maintaining SOTA
+                            performance on sub-tasks.</li>
+                    </ul>
                 </div>
-                {% endif %}
-                <section class="post-preview">
-                    <a class="post-link" href="{{ post.url | relative_url }}" title="{{ post.title }}"></a>
-                    <h2 class="post-title">{{ post.title }}</h2>
-                    {% if post.subtitle %}
-                    <h3 class="post-subtitle">{{ post.subtitle }}</h3>
-                    {% endif %}
-                    {% if post.subtitle.size==0 or post.subtitle==nil %}
-                    <p class="post-excerpt">{{ post.excerpt | strip_html | strip_newlines | truncate: 126}}</p>
-                    {% endif %}
-                </section>
-                <footer class="post-meta">
-                    <div class="post-tags">
-                        {% if post.tags.size > 0 %}
-                            {% for tag in post.tags  %}
-                            <a href={{ "tags.html#" | append: tag | relative_url }} class="post-tag">{{ tag }}</a>
-                            {% endfor %}
-                        {% endif %}
+            </div>
+
+            <div class="report-entry">
+                <div class="entry-title">Machine Learning Researcher</div>
+                <div class="entry-subtitle">Alpha Artificial Intelligence Capital</div>
+                <div class="entry-content">
+                    <ul>
+                        <li>Architected Agentic RAG workflows using LlamaIndex for private codebase intelligence and
+                            schema linking.</li>
+                        <li>Applied Transformer-based time-series models for volatility and equity price forecasting.
+                        </li>
+                        <li>Integrated LLM-driven sentiment analysis into quantitative investment pipelines.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="report-entry">
+                <div class="entry-title">Quant Research Intern</div>
+                <div class="entry-subtitle">GF Securities</div>
+                <div class="entry-content">
+                    <ul>
+                        <li>Developed Barra multi-factor risk control models and automated data cleaning pipelines using
+                            Python/SQL.</li>
+                        <li>Engineered Dask-parallelized factor computation modules for large-scale financial datasets.
+                        </li>
+                        <li>Researched option arbitrage strategies using Black-Scholes modeling and Beta-hedged
+                            portfolio construction.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="agent-meta">SYSTEM_BUILD_REPOSITORY</div>
+            <div class="section-head">
+                <h2>03. Featured Systems</h2>
+            </div>
+
+            <div class="report-entry">
+                <div style="display: flex; justify-content: space-between; align-items: start;">
+                    <div>
+                        <div class="entry-title">DeepFund [NeurIPS 2025]</div>
+                        <div class="entry-subtitle">Multi-Agent Investment Copilot</div>
                     </div>
-                    <time class="post-date" datetime="{{ post.date | date:"%y-%m-%d" }}">{{ post.date | date_to_string }}</time>
-                </footer>
-            </article>
-        {% endfor %}
+                    <a href="https://github.com/HKUSTDial/DeepFund" target="_blank" class="project-link">
+                        <i data-lucide="external-link" style="width: 16px;"></i> SOURCE
+                    </a>
+                </div>
+                <div class="entry-content">
+                    <p>A LangChain-powered autonomous system that orchestrates analysts, risk managers, and portfolio
+                        optimizers into a unified trading environment. Features real-time SQLite data persistence and
+                        multi-source API integration.</p>
+                    <div
+                        style="margin-top: 0.5rem; font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-mono);">
+                        TAGS: [LANGCHAIN] [MULTI-AGENT] [SQLITE]
+                    </div>
+                </div>
+            </div>
 
-        {% if paginator.total_pages > 1 %}
-            {% include pageNav.html %}
-        {% endif %}
+            <div class="report-entry"
+                style="border-right: 1px solid var(--border-dim); background: rgba(56, 189, 248, 0.02);">
+                <div style="display: flex; justify-content: space-between; align-items: start;">
+                    <div>
+                        <div class="entry-title">SignalFlux</div>
+                        <div class="entry-subtitle">Autonomous Market Intelligence Hub</div>
+                    </div>
+                    <a href="https://github.com/RKiding/SignalFlux" target="_blank" class="project-link">
+                        <i data-lucide="external-link" style="width: 16px;"></i> SOURCE
+                    </a>
+                </div>
+                <div class="entry-content">
+                    <p>End-to-end intelligence hub that processes raw market signals into formatted reports.
+                        Combines Transformer-based forecasting with LLM Data Agents to produce human-readable investment
+                        insights.</p>
+                    <div
+                        style="margin-top: 0.5rem; font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-mono);">
+                        TAGS: [KRONOS] [DATA_AGENT] [D3_JS]
+                    </div>
+                </div>
+            </div>
+        </section>
 
+        <section id="education">
+            <div class="agent-meta">ACADEMIC_QUAL_VERIFIED</div>
+            <div class="section-head">
+                <h2>04. Education</h2>
+            </div>
+
+            <div class="report-entry">
+                <div class="entry-title">MPhil in Data Science</div>
+                <div class="entry-subtitle">The Hong Kong University of Science and Technology</div>
+                <p style="font-size: 0.9rem; color: var(--text-body);">Focus: Deep Learning, Data Agents,
+                    Optimization. | Award: PGS Scholarship.</p>
+            </div>
+
+            <div class="report-entry">
+                <div class="entry-title">BE in Economics & Computer Science</div>
+                <div class="entry-subtitle">South China University of Technology</div>
+                <p style="font-size: 0.9rem; color: var(--text-body);">Focus: Econometrics, OS, Data Structures. |
+                    Scholarship. National Research Awards.
+                </p>
+            </div>
+        </section>
+
+        <section id="skills">
+            <div class="agent-meta">CORE_PRIMITIVES_STACK</div>
+            <div class="section-head">
+                <h2>05. Technical Stack</h2>
+            </div>
+            <div class="skills-box">
+                <div class="skill-item">LANG // <span>Python, C++, SQL, Matlab</span></div>
+                <div class="skill-item">FRAMEWORK // <span>PyTorch, LangChain, Spark</span></div>
+                <div class="skill-item">DATA // <span>ClickHouse, SQLite, Redis</span></div>
+                <div class="skill-item">INFRA // <span>Linux, Docker, MCP</span></div>
+            </div>
+        </section>
+
+        <footer
+            style="margin-top: 6rem; padding-top: 2rem; border-top: 1px solid var(--border-dim); font-family: var(--font-mono); font-size: 0.75rem; text-align: center;">
+            [TERMINAL_SESSION_CLOSED] © Infinite RR Agent Protocol
+        </footer>
     </div>
 
-    <aside class="g-sidebar-wrapper">
-        <div class="g-sidebar">
-            <section class="author-card">
-                <div class="avatar">
-                    <img src="{{ site.avatar | relative_url }}" alt="">
-                </div>
-                <div class="author-name" rel="author">{{ site.author }}</div>
-                <div class="bio">
-                    <p>{{ site.bio }}</p>
-                </div>
-                {% if site.sns.size > 0 %}
-                <ul id="sns-links" class="sns-links">
-                    {% for s in site.sns %}
-                    <li>
-                        <a href="{{ s[1] }}" target="_blank">
-                            <i class="iconfont icon-{{ s[0] }}"></i>
-                        </a>
-                    </li>
-                    {% endfor %}
-                </ul>
-                {% endif %}
-            </section>
+    <script>
+        lucide.createIcons();
 
-            {% if site.recommend-tags and site.tags.size>0 %}
-            <section class="tags-card">
-                {% for tag in site.tags %}
-                    {% if forloop.index > site.recommend-condition-size %}
-                        {% break %}
-                    {% endif %}
-                    <a href="{{ "tags.html#" | append: tag[0] | relative_url }}" class="tag">{{ tag[0]}}</a>
-                {% endfor %}
-            </section>
-            {% endif %}
-        </div>
+        // Simple scroll spy for navigation
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('nav a');
 
-        {% if site.search %}
-        <div class="search-card">
-            <input id="search_input" type="text" placeholder="Search..." autocomplete="off">
-            <i class="iconfont icon-search"></i>
-            <div class="search_result"></div>
-        </div>
-        {% endif %}
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
 
-    </aside>
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
 
-</main>
-
-{% include footer.html %}
+</html>
