@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INDEX::SIGNALFLUX</title>
-    <meta name="description" content="File index for SignalFlux project outputs.">
+    <title>INDEX::DEEPEAR</title>
+    <meta name="description" content="File index for DeepEar project outputs.">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -154,9 +154,10 @@
 
     <script>
         // --- CONFIGURE YOUR FILES HERE ---
-        const HTML_FILES = [
-            "hk_fire.html",
-            "meta_manus.html"
+        const ITEMS = [
+            { title: "Live Demo: DeepEar Dashboard", url: "https://deepear.vercel.app/", icon: "layout-dashboard", target: "_blank" },
+            { title: "hk_fire.html", url: "hk_fire.html", icon: "file-code", target: "_self" },
+            { title: "meta_manus.html", url: "meta_manus.html", icon: "file-code", target: "_self" }
         ];
         // ---------------------------------
 
@@ -164,17 +165,17 @@
             const listElement = document.getElementById('file-list');
             listElement.innerHTML = '';
 
-            if (HTML_FILES.length === 0) {
+            if (ITEMS.length === 0) {
                 listElement.innerHTML = '<li class="file-item"><div class="file-link"><span>No reports found.</span></div></li>';
                 return;
             }
 
-            HTML_FILES.forEach(fileName => {
+            ITEMS.forEach(item => {
                 const li = document.createElement('li');
                 li.className = 'file-item';
                 li.innerHTML = `
-                    <a href="${fileName}" class="file-link">
-                        <span><i data-lucide="file-code" class="file-icon"></i> ${fileName}</span>
+                    <a href="${item.url}" class="file-link" target="${item.target}">
+                        <span><i data-lucide="${item.icon}" class="file-icon"></i> ${item.title}</span>
                         <i data-lucide="arrow-right" style="width: 16px;"></i>
                     </a>
                 `;
