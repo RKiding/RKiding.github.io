@@ -1,192 +1,182 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!doctype html>
+<html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INDEX::DEEPEAR</title>
-    <meta name="description" content="File index for DeepEar project outputs.">
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
-        rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
-        :root {
-            --primary: #0ea5e9;
-            --secondary: #6366f1;
-            --accent: #22c55e;
-            --bg-main: #0a0c10;
-            --bg-card: #11141b;
-            --border-dim: #1e293b;
-            --text-head: #f8fafc;
-            --text-body: #cbd5e1;
-            --text-mono: #38bdf8;
-            --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
-            --font-serif: 'Inter', system-ui, sans-serif;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background-color: var(--bg-main);
-            color: var(--text-body);
-            font-family: var(--font-serif);
-            line-height: 1.5;
-            background-image:
-                linear-gradient(rgba(30, 41, 59, 0.2) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(30, 41, 59, 0.2) 1px, transparent 1px);
-            background-size: 40px 40px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 600px;
-            padding: 2rem;
-            border: 1px solid var(--border-dim);
-            background: rgba(10, 12, 16, 0.9);
-            backdrop-filter: blur(4px);
-            position: relative;
-        }
-
-        /* Scanning Line Effect */
-        body::after {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, transparent 45%, rgba(14, 165, 233, 0.05) 50%, transparent 55%);
-            background-size: 100% 200%;
-            animation: scan 8s linear infinite;
-            pointer-events: none;
-            z-index: 1000;
-        }
-
-        @keyframes scan {
-            from {
-                background-position: 0 100%;
-            }
-
-            to {
-                background-position: 0 -100%;
-            }
-        }
-
-        h1 {
-            font-family: var(--font-mono);
-            font-size: 1.5rem;
-            color: var(--text-head);
-            margin-bottom: 0.5rem;
-            border-bottom: 1px solid var(--border-dim);
-            padding-bottom: 1rem;
-        }
-
-        .meta {
-            font-family: var(--font-mono);
-            color: var(--text-mono);
-            font-size: 0.8rem;
-            margin-bottom: 2rem;
-            opacity: 0.8;
-        }
-
-        .file-list {
-            list-style: none;
-        }
-
-        .file-item {
-            margin-bottom: 1rem;
-        }
-
-        .file-link {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 1rem;
-            background: var(--bg-card);
-            border: 1px solid var(--border-dim);
-            color: var(--text-head);
-            text-decoration: none;
-            transition: all 0.2s;
-            font-family: var(--font-mono);
-            font-size: 0.95rem;
-        }
-
-        .file-link:hover {
-            border-color: var(--primary);
-            background: rgba(14, 165, 233, 0.05);
-            transform: translateX(5px);
-        }
-
-        .file-icon {
-            margin-right: 10px;
-            color: var(--secondary);
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>DeepEar ｜ 顺风耳 - 将舆情变成可操作的投资逻辑链</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
-
 <body>
-    <div class="container">
-        <div class="meta">DIR: ~/SIGNALFLUX // INDEX_MODE</div>
-        <h1>Directory Index</h1>
-
-        <ul class="file-list" id="file-list">
-            <!-- Files loaded via script below -->
-        </ul>
-
-        <div class="meta"
-            style="margin-top: 2rem; border-top: 1px solid var(--border-dim); padding-top: 1rem; text-align: right;">
-            <a href="../index.html" style="color: var(--text-mono); text-decoration: none;">[RETURN_ROOT]</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="https://github.com/HKUSTDial/DeepEar" target="_blank" rel="noopener">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="brand-icon">
+          <path d="M12 2L2 7l10 5 10-5-10-5z" fill="currentColor"/>
+          <path d="M2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        DeepEar
+      </a>
+      <button id="navToggle" class="nav-toggle">
+        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+      </button>
+      <nav id="mainNav" class="main-nav">
+        <a href="#about" data-i18n="nav.about">关于</a>
+        <a href="#features" data-i18n="nav.features">核心特性</a>
+        <a href="#architecture" data-i18n="nav.architecture">架构说明</a>
+        <a href="#quickstart" data-i18n="nav.quickstart">快速开始</a>
+        <div class="lang-switcher">
+          <button class="lang-btn" data-lang="zh">中文</button>
+          <button class="lang-btn" data-lang="en">English</button>
         </div>
+        <a href="https://github.com/HKUSTDial/DeepEar" target="_blank" class="nav-github">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.379.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.161 22 16.416 22 12c0-5.523-4.477-10-10-10z"></path></svg>
+          <span data-i18n="nav.github">GitHub</span>
+        </a>
+      </nav>
     </div>
+  </header>
 
-    <script>
-        // --- CONFIGURE YOUR FILES HERE ---
-        const ITEMS = [
-            { title: "Live Demo: DeepEar Dashboard", url: "https://deepear.vercel.app/", icon: "layout-dashboard", target: "_blank" },
-            { title: "hk_fire.html", url: "hk_fire.html", icon: "file-code", target: "_self" },
-            { title: "meta_manus.html", url: "meta_manus.html", icon: "file-code", target: "_self" }
-        ];
-        // ---------------------------------
+  <main>
+    <section class="hero blur-bg">
+      <div class="container hero-inner">
+        <div class="badge" data-i18n="hero.badge">🚀 现已开源 · MIT License</div>
+        <h1 class="gradient-text" data-i18n="hero.title">DeepEar ｜ 顺风耳</h1>
+        <p class="lead" data-i18n="hero.subtitle" data-html="true">将碎片化的社会舆情与新闻转化为<b>结构化的投资逻辑链</b>。<br/>一个面向金融分析师与量化研究员的开源深度研究与多智能体框架。</p>
+        <div class="cta-group">
+          <a class="btn btn-primary" href="https://github.com/HKUSTDial/DeepEar" target="_blank" rel="noopener" data-i18n="hero.btn1">获取源码</a>
+          <a class="btn btn-secondary" href="https://deepear.vercel.app/" target="_blank" rel="noopener" data-i18n="hero.btn2">在线仪表盘演示</a>
+          <a class="btn btn-secondary" href="example.html" data-i18n="hero.btn3">查看示例</a>
+        </div>
+        <div class="hero-image">
+          <img src="https://raw.githubusercontent.com/HKUSTDial/DeepEar/main/assets/dashboard_screenshot.png" alt="DeepEar Dashboard" onerror="this.src='https://placehold.co/800x450/111825/2dd4bf?text=DeepEar+Dashboard'"/>
+        </div>
+      </div>
+    </section>
 
-        function renderList() {
-            const listElement = document.getElementById('file-list');
-            listElement.innerHTML = '';
+    <section id="about" class="container section">
+      <div class="section-head">
+        <h2 data-i18n="about.title">为什么选择 DeepEar？</h2>
+        <p data-i18n="about.subtitle">弥合非结构化信息与可执行交易信号之间的鸿沟</p>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <div class="card-icon">📊</div>
+          <h3 data-i18n="about.card1.title">投资研究增强</h3>
+          <p data-i18n="about.card1.desc">自动化收集并分析社交媒体与新闻中的碎片化信息，发掘隐藏的投资机会与逻辑。</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">⚡️</div>
+          <h3 data-i18n="about.card2.title">市场实时监控</h3>
+          <p data-i18n="about.card2.desc">实时追踪"热门话题"与事件（如政策转变、行业突破），识别其对特定板块或个股的影响。</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">⚙️</div>
+          <h3 data-i18n="about.card3.title">量化因子转化</h3>
+          <p data-i18n="about.card3.desc">将定性新闻转化为量化的情绪得分与信号指标，适用于回测或直接作为模型输入。</p>
+        </div>
+      </div>
+    </section>
 
-            if (ITEMS.length === 0) {
-                listElement.innerHTML = '<li class="file-item"><div class="file-link"><span>No reports found.</span></div></li>';
-                return;
-            }
+    <section id="features" class="container section">
+      <div class="section-head">
+        <h2 data-i18n="features.title">核心特性</h2>
+        <p data-i18n="features.subtitle">为 AI 与金融打造的下一代工具链</p>
+      </div>
+      <ul class="features-list">
+        <li>
+          <div class="f-icon">🤖</div>
+          <div>
+            <strong data-i18n="features.f1.title">多智能体协作 (Multi-Agent)</strong>
+            <p data-i18n="features.f1.desc">包含专业的 Trend Spotting（趋势）、Financial Analysis（金融验证）、Report Writing（研报）等智能体组成的协同网络。</p>
+          </div>
+        </li>
+        <li>
+          <div class="f-icon">🔌</div>
+          <div>
+            <strong data-i18n="features.f2.title">Agent Skill 随时接入</strong>
+            <p data-i18n="features.f2.desc">作为即插即用的 Skill 支持 Antigravity, OpenCode 等平台，化身任何 Chat 助手的专职金融研究员。</p>
+          </div>
+        </li>
+        <li>
+          <div class="f-icon">📈</div>
+          <div>
+            <strong data-i18n="features.f3.title">交互式金融看板</strong>
+            <p data-i18n="features.f3.desc">提供现代化的 React UI (Dashboard)，实现透明化的 Agent 工作流追踪与逻辑推演监控。</p>
+          </div>
+        </li>
+        <li>
+          <div class="f-icon">🔍</div>
+          <div>
+            <strong data-i18n="features.f4.title">混合检索引擎与全景数据</strong>
+            <p data-i18n="features.f4.desc">结合 BM25（关键词）与向量搜索进行精确检索。原生支持 15+ 数据源接入（微博、财联社、华尔街见闻等）。</p>
+          </div>
+        </li>
+        <li>
+          <div class="f-icon">🧠</div>
+          <div>
+            <strong data-i18n="features.f5.title">新闻感知时间序列模型</strong>
+            <p data-i18n="features.f5.desc">通过自定义 Kronos 集成与新闻投影层（News-Aware Projection），预测基于新闻事件冲击的价格变动。</p>
+          </div>
+        </li>
+      </ul>
+    </section>
 
-            ITEMS.forEach(item => {
-                const li = document.createElement('li');
-                li.className = 'file-item';
-                li.innerHTML = `
-                    <a href="${item.url}" class="file-link" target="${item.target}">
-                        <span><i data-lucide="${item.icon}" class="file-icon"></i> ${item.title}</span>
-                        <i data-lucide="arrow-right" style="width: 16px;"></i>
-                    </a>
-                `;
-                listElement.appendChild(li);
-            });
+    <section id="architecture" class="container section alt-bg">
+      <div class="section-head">
+        <h2 data-i18n="arch.title">架构蓝图</h2>
+        <p data-i18n="arch.subtitle">解耦设计：工具层、智能体层与控制流</p>
+      </div>
+      <div class="arch-box">
+        <div class="arch-layer">
+          <h4 data-i18n="arch.layer1.title">工作流层 Workflow</h4>
+          <p data-i18n="arch.layer1.desc" data-html="true"><code>main_flow.py</code>: 统筹全局状态与执行路径，支持断点配置（Checkpoint) 与恢复。</p>
+        </div>
+        <div class="arch-layer">
+          <h4 data-i18n="arch.layer2.title">智能体层 Agents</h4>
+          <p data-i18n="arch.layer2.desc" data-html="true"><code>TrendAgent</code> (热点与事件) / <code>FinAgent</code> (金融逻辑验证与传导) <br/> <code>ForecastAgent</code> (时序预测) / <code>ReportAgent</code> (Map-Reduce专业研报)</p>
+        </div>
+        <div class="arch-layer">
+          <h4 data-i18n="arch.layer3.title">基建与工具 Infra & Tools</h4>
+          <p data-i18n="arch.layer3.desc">Toolkits (新闻、持仓、向量检索) / SQLite & Vector DB 存储</p>
+        </div>
+      </div>
+    </section>
 
-            lucide.createIcons();
-        }
+    <section id="quickstart" class="container section">
+      <div class="section-head">
+        <h2 data-i18n="quickstart.title">快速开始</h2>
+        <p data-i18n="quickstart.subtitle">只需几行命令，即可在本地运行强大的 DeepEar 框架</p>
+      </div>
+      <div class="code-window">
+        <div class="window-header">
+          <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+          <span class="window-title">bash</span>
+        </div>
+        <pre><code id="quickstart-code"></code></pre>
+      </div>
+    </section>
+  </main>
 
-        renderList();
-    </script>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong style="color:var(--white)" data-i18n="footer.brand">DeepEar ｜ 顺风耳</strong>
+        <p data-i18n="footer.desc">香港科技大学 (HKUST) 团队及相关开发者开源</p>
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/HKUSTDial/DeepEar" target="_blank" data-i18n="footer.link1">源码 (GitHub)</a>
+        <a href="https://deepear.vercel.app/" target="_blank" data-i18n="footer.link2">在线体验</a>
+        <a href="https://github.com/RKiding/Awesome-finance-skills" target="_blank" data-i18n="footer.link3">Awesome Finance Skills</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <small data-i18n="footer.copyright">© 2026 DeepEar. Released under the MIT License.</small>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
-
 </html>
